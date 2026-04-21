@@ -63,10 +63,16 @@ export default function App() {
       if (data.type === "initial_state") {
         setAgents(data.agents);
         setOrders(data.orders);
+
       } else if (data.type === "agent_update") {
-        setAgents(prev => prev.map(a => a.id === data.agent.id ? data.agent : a));
-        if (data.order) setOrders(prev => prev.map(o => o.id === data.order.id ? data.order : o));
-      }
+  setAgents(prev => prev.map(a => a.id === data.agent.id ? data.agent : a));
+  if (data.order) setOrders(prev => prev.map(o => o.id === data.order.id ? data.order : o));
+} else if (data.type === "reassignment") {
+  setAgents(data.agents);
+  setOrders(data.orders);
+  setMessage(`🔄 ${data.message}`);
+  setTimeout(() => setMessage(""), 3000);
+}
     };
     ws.onclose = () => setTimeout(connectWS, 2000);
   };
