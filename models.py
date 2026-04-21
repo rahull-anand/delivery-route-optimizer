@@ -3,7 +3,6 @@ from typing import Optional, List
 from enum import Enum
 import uuid
 from datetime import datetime
-
 class AgentStatus(Enum):
     IDLE = "idle"
     DELIVERING = "delivering"
