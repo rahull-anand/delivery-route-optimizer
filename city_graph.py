@@ -1,6 +1,5 @@
 import networkx as nx
 import random
-
 def create_city_graph():
     """Create a graph representing a city with intersections and roads"""
     G = nx.Graph()
