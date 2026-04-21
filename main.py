@@ -5,9 +5,7 @@ from dispatcher import assign_order, reassign_order, get_all_agents, get_all_ord
 from simulation import connected_clients, move_agents
 from city_graph import create_city_graph
 import asyncio
-
 app = FastAPI(title="Delivery Route Optimizer")
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
